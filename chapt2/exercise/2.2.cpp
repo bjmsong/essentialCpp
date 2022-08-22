@@ -2,26 +2,36 @@
 #include <vector>
 using namespace std;
 
-bool pentagonal(vector<int> &vec, int vec_len)
+bool pentagonal(vector<int> &vec, int vec_num)
 {
-    if (vec_len<=0 || vec_len*(3*vec_len-1)/2>)
+    if (vec_num <= 0 || vec_num * (3 * vec_num - 1) / 2 > INT_MAX)
         return false;
-    for(int i=0; i<vec_len; i++)
-        vec[i] = i*(3*i-1)/2;
-    
+    for (int i = 0; i < vec_num; i++)
+    {
+        int val = (i+1) * (3 * (i + 1) - 1) / 2;
+        vec.push_back(val);
+    }
+
     return true;
+}
+
+template <typename elemType>
+void display(const vector<elemType> &vec, string type)
+{
+    for (int i = 0; i < vec.size(); i++)
+        cout << vec[i] << endl;
 }
 
 int main()
 {
-    int vec_len;
+    int vec_num = 3;
     cout << "Please set the number of vector: " << endl;
-    cin >> vec_len;
+    cin >> vec_num;
     vector<int> vec;
-    if (!pentagonal(vec, vec_len))
+    if (!pentagonal(vec, vec_num))
     {
-       cout << "Invalid number of vector !" << endl;
-       return 1;  
+        cout << "Invalid number of vector !" << endl;
+        return 1;
     }
-
+    display(vec, "int");
 }
