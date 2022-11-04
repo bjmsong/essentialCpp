@@ -2,6 +2,7 @@
 # include <vector>
 using namespace std;
 
+// 使用vector
 int main()
 {
     vector<int> seq;

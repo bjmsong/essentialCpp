@@ -1,6 +1,7 @@
 # include <iostream>
 using namespace std;
 
+// 使用array
 int main()
 {
     const int seq_size = 100;

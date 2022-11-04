@@ -1,6 +1,7 @@
 # include <iostream>
 using namespace std;
 
+// 使用C-style字符串
 int main()
 {
     char user_name[] = {'a'};

@@ -2,6 +2,7 @@
 # include <string>
 using namespace std;
 
+// 使用string对象
 int main()
 {
     string user_name;
