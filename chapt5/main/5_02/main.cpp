@@ -1,5 +1,6 @@
 #include "fibonacci.h"
 
+// 重载iostream运算符
 ostream & operator<<(ostream &os, const num_sequence &ns)
 {
     return ns.print(os);
