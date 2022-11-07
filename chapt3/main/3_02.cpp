@@ -4,10 +4,8 @@
 #include <string>
 using namespace std;
 
-// find算法应用在通用容器(array,vector,list等)上的实现
-// ItType 是个iterator
 template<typename ItType, typename elemType>
-ItType findnew(ItType first, ItType last, const elemType & value)
+ItType find(ItType first, ItType last, const elemType & value)
 {
     for(; first != last; ++first)
     {
@@ -23,7 +21,7 @@ int main()
     vector<int> ivec(array, array + 8);
     list<int> ilist(array, array + 8);
 
-    int * p = findnew(array, array + 8, 5);
+    int * p = find(array, array + 8, 5);
     if(p != array + 8)
     {
         // 找到了
@@ -33,14 +31,14 @@ int main()
         cout << "Not find" << endl;
 
     vector<int>::iterator iter;
-    iter = findnew(ivec.begin(), ivec.end(), 5);
+    iter = find(ivec.begin(), ivec.end(), 5);
     if(iter != ivec.end())
         cout << "Find" << endl;
     else
         cout << "Not find" << endl;
 
     list<int>::iterator it_list;
-    it_list = findnew(ilist.begin(), ilist.end(), 8);
+    it_list = find(ilist.begin(), ilist.end(), 8);
     if(it_list != ilist.end())
         cout << "Find" << endl;
     else

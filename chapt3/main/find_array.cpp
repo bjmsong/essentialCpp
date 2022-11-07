@@ -2,6 +2,9 @@
 #include <vector>
 using namespace std;
 
+// find算法应用在array容器上的实现
+
+// 实现一
 template <typename elemType>
 elemType* find(elemType *array, int size, const elemType &value)
 {
@@ -13,6 +16,7 @@ elemType* find(elemType *array, int size, const elemType &value)
     return 0;
 }
 
+// 实现二
 template <typename elemType>
 elemType* find(elemType *first, elemType *last, elemType &value)
 {
@@ -39,16 +43,14 @@ int main()
         cout << "can't find the value" << endl;
 
     // 会报错
-    // if (find(a, a + 4, 100))
-    //     cout << "find the value" << endl;
-    // else
-    //     cout << "can't find the value" << endl;
+    int v = 100;
+    if (find(a, a + 4, v))
+        cout << "find the value" << endl;
+    else
+        cout << "can't find the value" << endl;
 
     if (find(a, a + 4, a[3]))
         cout << "find the value" << endl;
     else
         cout << "can't find the value" << endl;
-
-    vector<int> vec(a, a + 4);
-    // if (find())
 }
